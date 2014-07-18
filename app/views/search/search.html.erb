@@ -1,0 +1,31 @@
+<h1>Search#search</h1>
+
+<%= form_tag(search_search_path, :method => "get", id: "search-form") do %>
+  <%= label_tag(:search, "Relocating to:") %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Listings" %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>
+
+<h1>Listing Books</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Summary</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+<% @results.each do |res| %>
+  <tr>
+    <td><%= res.title %></td>
+    <td><%= res.description %></td>
+    
+  </tr>
+<% end %>
+</table>
+ 
+<br>
+ 
+	
